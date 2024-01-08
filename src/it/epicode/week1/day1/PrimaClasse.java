@@ -11,20 +11,29 @@ public class PrimaClasse {
 		double somma = somma(4,5);
 		System.out.println(somma);
 		//utilizzo di un metodo void con parametro statico
-		benvenuto("Davide");
+		benvenuto("Davide", "m");
 		//Chiedo in input il nome all'utente
 		System.out.println("Inserisci il tuo nome");
 		//creo un nuovo oggetto dalla classe scanner che bisogna importare per forza a meno che la classe sia nello stesso package
 		Scanner scanner = new Scanner(System.in);
 		String j = scanner.next();
-		benvenuto(j);
-
+		scanner.nextLine();
+		System.out.println("Inserisci il tuo genere");
+		String g = scanner.next();
+		benvenuto(j, g);
 	}
+
 	public static double somma(double x, double y){
 		double somma = x + y ;
 		return somma; 
 	}
-	public static void benvenuto(String nome) {
+
+	public static void benvenuto(String nome, String gender) {
+		if (gender == "m"){
 		System.out.println("Benvenuto " + nome);
+		} else {
+		System.out.println("Benvenuta " + nome);
+		}
 	}
+
 }
