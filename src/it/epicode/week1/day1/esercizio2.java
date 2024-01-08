@@ -7,10 +7,8 @@ public class esercizio2 {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Inserisci una parola");
 		String a = scanner.next();
-		scanner.nextLine();
 		System.out.println("Inserisci una parola");
 		String b = scanner.next();
-		scanner.nextLine();
 		System.out.println("Inserisci una parola");
 		String c = scanner.next();
 		System.out.println("Ecco le stringhe concatenate");
