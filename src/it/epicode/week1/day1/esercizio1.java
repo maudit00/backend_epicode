@@ -1,10 +1,10 @@
 package it.epicode.week1.day1;
-import java.util.Scanner;
 
 public class esercizio1{
 
 	public static void main(String[] args){
 		System.out.println(Moltiplica(4,4));
+		System.out.println(Concatena("ciao",4));
 		String[] parole = {"ciao", "come", "stai", "caro", "amico"};
 		String[] a = inserisciInArray (parole, "completamente");
 
@@ -16,6 +16,11 @@ public class esercizio1{
 
 	public static int Moltiplica (int x, int y){
 		return x * y;
+	}	
+
+	public static String Concatena (String x, int y){
+		String stringa = x + y;
+		return stringa;
 	}	
 	
 	public static String[] inserisciInArray (String[] array, String s){
