@@ -8,6 +8,7 @@ public class esercizio1 {
 	r1.stampaRettangolo();
 	Rettangolo r2 = new Rettangolo(10,20);
 	r2.stampaRettangolo();
+	Rettangolo.stampaDueRettangoli(r1, r2);
 
 	}
 }

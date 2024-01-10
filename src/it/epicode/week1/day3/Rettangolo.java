@@ -26,4 +26,11 @@ public class Rettangolo {
 
 	}
 
+	public static void stampaDueRettangoli (Rettangolo r1, Rettangolo r2) {
+		double sommaPerimetro  = r1.perimetro() + r2.perimetro();
+		double sommaArea = r1.area() + r2.area();
+		System.out.println("il perimetro del primo rettangolo è : " + r1.perimetro() + " e la sua area è di : " + r1.area());
+		System.out.println("il perimetro del secondo rettangolo è : " + r2.perimetro() + " e la sua area è di : " + r2.area());
+		System.out.println("La somma dei perimetri è : " + sommaPerimetro + " mentre la somma delle aree è di : " + sommaArea);
+	}
 }
