@@ -9,7 +9,9 @@ public class esercizio2 {
         sim.call(2, "3254224493");
         sim.call(1, "3254224493");
         sim.call(5.3, "3254232213");
-        sim.printDetails();
+        sim.call(3.3, "3254232213");
+        sim.call(1.4, "3254232213");
+        sim.call(4, "3254232213");
         sim.printRegister();
     }
 
