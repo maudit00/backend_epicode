@@ -24,7 +24,6 @@ public class GestioneDipendenti {
 
         for (int i = 0; i < dipendenti.length; i++){
             sommaPaghe += Dipendente.calcolaPaga(dipendenti[i], 5);
-            System.out.println(Dipendente.calcolaPaga(dipendenti[i], 5));
         }
 
         System.out.println("La somma delle paghe dovute con 5 ore di straordinario è:" + sommaPaghe);
