@@ -3,7 +3,7 @@ package it.epicode.week1.day4;
 import java.util.logging.Level;
 
 public class Dipendente {
-    private double stipendioBase = 1000;
+    public final static double stipendioBase = 1000;
     private String matricola;
     private double stipendio;
     private double importoOrarioStraordinario;
@@ -18,8 +18,7 @@ public class Dipendente {
         this.Levels = Livello.OPERAIO;
     }
 
-    public Dipendente(double stipendioBase, String matricola, double stipendio, double importoOrarioStraordinario, Livello levels, Dipartimento departments) {
-        this.stipendioBase = stipendioBase;
+    public Dipendente( String matricola, double stipendio, double importoOrarioStraordinario, Livello levels, Dipartimento departments) {
         this.matricola = matricola;
         this.stipendio = stipendio;
         this.importoOrarioStraordinario = importoOrarioStraordinario;
@@ -60,12 +59,7 @@ public class Dipendente {
     }
 
     public void stampaDatiDipendente (){
-        System.out.println("il dipendente ha numero matricola: " + matricola);
-        System.out.println("il dipendente ha uno stipendio base di: " + stipendioBase);
-        System.out.println("il dipendente ha uno stipendio di: " + stipendio);
-        System.out.println("L'importo orario per gli straordinari del dipendente è: " + importoOrarioStraordinario);
-        System.out.println("Il livello del dipedente è: " + Levels);
-        System.out.println("Il dipartimento del dipedente è: " + Departments);
+        System.out.println(this);
     }
 
     public Livello promuovi(){
@@ -95,5 +89,18 @@ public class Dipendente {
     }
     public static double calcolaPaga (Dipendente dipendente, int oreStrao){
         return dipendente.stipendio + (oreStrao * dipendente.importoOrarioStraordinario);
+    }
+
+
+    @Override
+    public String toString() {
+        return "Dipendente{" +
+                "stipendioBase=" + stipendioBase +
+                ", matricola='" + matricola + '\'' +
+                ", stipendio=" + stipendio +
+                ", importoOrarioStraordinario=" + importoOrarioStraordinario +
+                ", Levels=" + Levels +
+                ", Departments=" + Departments +
+                '}';
     }
 }

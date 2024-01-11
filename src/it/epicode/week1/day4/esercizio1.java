@@ -9,7 +9,7 @@ public class esercizio1 {
         d1.getMatricola();
         d1.setDepartments(Dipartimento.AMMINISTRAZIONE);
         d1.stampaDatiDipendente();
-        Dipendente d2 = new Dipendente(1500,"78/bis",1700,15,Livello.OPERAIO,Dipartimento.VENDITE);
+        Dipendente d2 = new Dipendente("78/bis",1700,15,Livello.OPERAIO,Dipartimento.VENDITE);
         d2.stampaDatiDipendente();
         d2.promuovi();
         d2.stampaDatiDipendente();
