@@ -14,11 +14,16 @@ public class Main {
 
         //ciclo per la richiesta input e l'inserimento dati in array
         for (int i = 0 ; i < elementsArr.length ; i++){
-            System.out.println("Seleziona il tipo di Elemento Multimediale : 1 - Audio , 2 - Video, 3 - Immagine");
-            int scelta = scanner.nextInt();
+            do {
+                System.out.println("Seleziona il tipo di Elemento Multimediale : 1 - Audio , 2 - Video, 3 - Immagine");
+                choice = scanner.nextInt();
+                if (choice == 0 || choice > 3){
+                    System.out.println("Scelta non corretta, ripetere la scelta da 1 a 3");
+                }
+            } while ( choice == 0 || choice > 3 );
             System.out.println("Scrivi un titolo per l'elemento" );
             String titolo = scanner.next();
-            createElement(scelta, i, titolo, elementsArr);
+            createElement(choice, i, titolo, elementsArr);
         }
 
         //ciclo di prova per la stampa degli elementi
@@ -28,13 +33,15 @@ public class Main {
 
         //ciclo per la scelta e la riproduzione degli elementi
 
+
         do {
             System.out.println("Scegliendo da 1 a 5 riproduci gli elementi inseriti");
             choice = scanner.nextInt();
-            if (choice == 0){
-                return;
+             if (choice > 5) {
+                System.out.println("Scelta non disponibile");
+            } else if (choice > 0 && choice <= 5) {
+                elementsArr[choice - 1].exec();
             }
-            elementsArr[choice - 1].exec();
         } while (choice != exitChoice);
     }
 
@@ -55,4 +62,5 @@ public class Main {
                 break;
         }
     }
+
 }

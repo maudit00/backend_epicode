@@ -5,7 +5,7 @@ public class Immagine extends ElementoMultimediale{
 
     //costruttore
     public Immagine (String titolo){
-        super (titolo, false);
+        super (titolo);
     }
 
     public void show(){

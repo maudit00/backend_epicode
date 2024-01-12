@@ -6,7 +6,7 @@ public class Video extends ElementoMultimediale implements Playable{
 
     //Costruttore
     public Video(String titolo){
-        super(titolo, true);
+        super(titolo);
     }
 
     //Sezione regolazione volume

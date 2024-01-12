@@ -6,7 +6,7 @@ public class Audio extends ElementoMultimediale implements Playable {
 
     //Costruttore
     public Audio(String titolo){
-        super(titolo, true);
+        super(titolo);
     }
 
     //Funzioni per regolare il volume
