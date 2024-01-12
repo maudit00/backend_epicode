@@ -14,6 +14,7 @@ public class Main {
 
         //ciclo per la richiesta input e l'inserimento dati in array
         for (int i = 0 ; i < elementsArr.length ; i++){
+            //ciclo per gestire l'errore nella scelta del tipo
             do {
                 System.out.println("Seleziona il tipo di Elemento Multimediale : 1 - Audio , 2 - Video, 3 - Immagine");
                 choice = scanner.nextInt();
@@ -21,6 +22,7 @@ public class Main {
                     System.out.println("Scelta non corretta, ripetere la scelta da 1 a 3");
                 }
             } while ( choice == 0 || choice > 3 );
+
             System.out.println("Scrivi un titolo per l'elemento" );
             String titolo = scanner.next();
             createElement(choice, i, titolo, elementsArr);
