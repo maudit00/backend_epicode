@@ -19,19 +19,19 @@ public class Immagine extends ElementoMultimediale{
     //sezione regola luminosità
     public void abbassaLuminosità(){
         if (luminosità == 0){
-            System.out.println("La luminosità è a già al minimo ");
+            System.out.println("La luminosità di " + getTitolo() + " è a già al minimo ");
             return;
         }
         luminosità -= 1;
-        System.out.println("Il luminosità ora è a : " + luminosità);
+        System.out.println("Il luminosità di " + getTitolo() + " ora è a : " + luminosità);
     }
     public void alzaLuminosità(){
         if (luminosità == 10){
-            System.out.println("La luminosità è a già al massimo ");
+            System.out.println("La luminosità di " + getTitolo() + " è a già al massimo ");
             return;
         }
         luminosità += 1;
-        System.out.println("Il luminosità ora è a : " + luminosità);
+        System.out.println("Il luminosità di " + getTitolo() + " ora è a : " + luminosità);
     }
 
     //sezione getter and setter

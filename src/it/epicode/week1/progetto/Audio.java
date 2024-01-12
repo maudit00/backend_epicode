@@ -13,19 +13,19 @@ public class Audio extends ElementoMultimediale implements Playable {
 
     public void abbassaVolume(){
         if (volume == 0){
-            System.out.println("Il volume è a già al minimo ");
+            System.out.println("Il volume di " + getTitolo() + " è a già al minimo ");
             return;
         }
         volume -= 1;
-        System.out.println("Il volume ora è a : " + volume);
+        System.out.println("Il volume di " + getTitolo() + " ora è a : " + volume);
     }
     public void alzaVolume(){
         if (volume == 10){
-            System.out.println("Il volume è a già al massimo ");
+            System.out.println("Il volume di " + getTitolo() + " è a già al massimo ");
             return;
         }
         volume += 1;
-        System.out.println("Il volume ora è a : " + volume);
+        System.out.println("Il volume di " + getTitolo() + " ora è a : " + volume);
     }
 
     //Funzione play implementata da interfaccia

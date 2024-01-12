@@ -12,36 +12,36 @@ public class Video extends ElementoMultimediale implements Playable{
     //Sezione regolazione volume
     public void abbassaVolume(){
         if (volume == 0){
-            System.out.println("Il volume è a già al minimo ");
+            System.out.println("Il volume di " + getTitolo() + " è a già al minimo ");
             return;
         }
         volume -= 1;
-        System.out.println("Il volume ora è a : " + volume);
+        System.out.println("Il volume di " + getTitolo() + " ora è a : " + volume);
     }
     public void alzaVolume(){
         if (volume == 10){
-            System.out.println("Il volume è a già al massimo ");
+            System.out.println("Il volume di " + getTitolo() + " è a già al massimo ");
             return;
         }
         volume += 1;
-        System.out.println("Il volume ora è a : " + volume);
+        System.out.println("Il volume di " + getTitolo() + " ora è a : " + volume);
     }
     //sezione regola luminosità
     public void abbassaLuminosità(){
         if (luminosità == 0){
-            System.out.println("La luminosità è a già al minimo ");
+            System.out.println("La luminosità di " + getTitolo() + " è a già al minimo ");
             return;
         }
         luminosità -= 1;
-        System.out.println("Il luminosità ora è a : " + luminosità);
+        System.out.println("Il luminosità di " + getTitolo() + " ora è a : " + luminosità);
     }
     public void alzaLuminosità(){
         if (luminosità == 10){
-            System.out.println("La luminosità è a già al massimo ");
+            System.out.println("La luminosità di " + getTitolo() + " è a già al massimo ");
             return;
         }
         luminosità += 1;
-        System.out.println("Il luminosità ora è a : " + luminosità);
+        System.out.println("Il luminosità di " + getTitolo() + " ora è a : " + luminosità);
     }
 
     public void play() {

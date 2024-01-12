@@ -29,19 +29,29 @@ public class Main {
         }
 
         //ciclo di prova per la stampa degli elementi
-        for (int i = 0; i < elementsArr.length; i++){
-            elementsArr[i].print();
-        }
+        printArr(elementsArr);
+
+        //test metodi delle sottoclassi
+
+        Audio a1 = new Audio("canzone");
+        a1.abbassaVolume();
+        a1.alzaVolume();
+        Video v1 = new Video ("video");
+        v1.abbassaVolume();
+        v1.alzaVolume();
+        v1.alzaLuminosità();
+        v1.abbassaLuminosità();
+        Immagine i1 = new Immagine("picture");
+        i1.alzaLuminosità();
+        i1.alzaLuminosità();
 
         //ciclo per la scelta e la riproduzione degli elementi
-
-
         do {
             System.out.println("Scegliendo da 1 a 5 riproduci gli elementi inseriti");
             choice = scanner.nextInt();
              if (choice > 5) {
                 System.out.println("Scelta non disponibile");
-            } else if (choice > 0 && choice <= 5) {
+            } else if (choice > 0) {
                 elementsArr[choice - 1].exec();
             }
         } while (choice != exitChoice);
@@ -62,6 +72,12 @@ public class Main {
             default :
                 System.out.println("La scelta non è corretta");
                 break;
+        }
+    }
+
+    public static void printArr(ElementoMultimediale[] array){
+        for (int i = 0; i < array.length; i++){
+            array[i].print();
         }
     }
 
