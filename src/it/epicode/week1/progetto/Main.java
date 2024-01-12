@@ -23,8 +23,9 @@ public class Main {
                 }
             } while ( choice == 0 || choice > 3 );
 
+            scanner.nextLine();
             System.out.println("Scrivi un titolo per l'elemento" );
-            String titolo = scanner.next();
+            String titolo = scanner.nextLine();
             createElement(choice, i, titolo, elementsArr);
         }
 
