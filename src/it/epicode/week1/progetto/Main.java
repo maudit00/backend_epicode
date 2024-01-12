@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int choice = 0;
+        final int exitChoice = 0;
+        int choice;
         ElementoMultimediale[] elementsArr = new ElementoMultimediale[5];
         Scanner scanner = new Scanner(System.in);
 
@@ -30,8 +31,11 @@ public class Main {
         do {
             System.out.println("Scegliendo da 1 a 5 riproduci gli elementi inseriti");
             choice = scanner.nextInt();
+            if (choice == 0){
+                return;
+            }
             elementsArr[choice - 1].exec();
-        } while (choice != 0);
+        } while (choice != exitChoice);
     }
 
     // funzione per la creazione del giusto elemento multimediale e aggiunta nell'array
