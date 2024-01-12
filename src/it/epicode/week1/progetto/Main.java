@@ -30,9 +30,8 @@ public class Main {
         do {
             System.out.println("Scegliendo da 1 a 5 riproduci gli elementi inseriti");
             choice = scanner.nextInt();
+            elementsArr[choice - 1].exec();
         } while (choice != 0);
-
-
     }
 
     // funzione per la creazione del giusto elemento multimediale e aggiunta nell'array
@@ -50,16 +49,6 @@ public class Main {
             default :
                 System.out.println("La scelta non è corretta");
                 break;
-        }
-    }
-
-    public static void execElement (int choice, ElementoMultimediale[] array){
-        boolean playable;
-        switch (choice){
-            case 1:
-                playable = array[choice-1].isPlayable();
-                if (playable){
-                }
         }
     }
 }

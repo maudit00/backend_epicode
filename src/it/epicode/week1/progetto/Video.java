@@ -78,8 +78,14 @@ public class Video extends ElementoMultimediale implements Playable{
     }
 
     //sezione stampa
+    @Override
     public void print(){
         System.out.println(this);
+    }
+    //sezione per l'esecuzione giusta
+    @Override
+    public void exec(){
+        play();
     }
     @Override
     public String toString() {

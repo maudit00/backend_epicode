@@ -43,8 +43,13 @@ public class Immagine extends ElementoMultimediale{
         this.luminosità = luminosità;
     }
     //sezione stampa
+    @Override
     public void print(){
         System.out.println(this);
+    }
+    @Override
+    public void exec(){
+        show();
     }
     @Override
     public String toString() {

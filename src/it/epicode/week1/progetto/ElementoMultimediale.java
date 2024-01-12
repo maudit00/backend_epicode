@@ -25,5 +25,6 @@ public abstract class ElementoMultimediale {
         this.playable = playable;
     }
     public abstract void print();
+    public abstract void exec();
 
 }

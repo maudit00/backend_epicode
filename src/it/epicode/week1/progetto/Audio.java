@@ -51,6 +51,9 @@ public class Audio extends ElementoMultimediale implements Playable {
     public void print(){
         System.out.println(this);
     }
+    public void exec(){
+        play();
+    }
     @Override
     public String toString() {
         return "Audio{" + "titolo " + getTitolo() +
