@@ -47,7 +47,7 @@ public class Main {
 
         //ciclo per la scelta e la riproduzione degli elementi
         do {
-            System.out.println("Scegliendo da 1 a 5 riproduci gli elementi inseriti");
+            System.out.println("Scegliendo da 1 a 5 riproduci gli elementi inseriti o inserisci 0 per uscire dal programma");
             choice = scanner.nextInt();
              if (choice > 5) {
                 System.out.println("Scelta non disponibile");
