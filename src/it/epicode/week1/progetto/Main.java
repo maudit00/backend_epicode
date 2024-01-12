@@ -59,7 +59,6 @@ public class Main {
             case 1:
                 playable = array[choice-1].isPlayable();
                 if (playable){
-                    array[choice-1].
                 }
         }
     }
