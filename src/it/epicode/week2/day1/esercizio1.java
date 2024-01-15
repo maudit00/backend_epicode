@@ -1,5 +1,6 @@
 package it.epicode.week2.day1;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,12 +9,13 @@ public class esercizio1 {
         int[] array = new int[5];
         Random randomNumber = new Random();
         Scanner scanner = new Scanner(System.in);
-
+        final Logger logger = LoggerFactory.getLogger("esercizio1");
 
         for (int i = 0; i < array.length; i++) {
             array[i] = randomNumber.nextInt(10) + 1;
             System.out.println(array[i]);
         }
+        logger.info("Array creato");
 
         insertInArray(array);
 
