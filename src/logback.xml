@@ -3,7 +3,7 @@
         <!-- encoders are assigned the type
              ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
         <encoder>
-            <pattern>%-4relative [%thread] %-5level %logger{35} -%kvp- %msg %n</pattern>
+            <pattern>%d{yyyy-MM-dd hh:mm:ss} %-4relative [%thread] %-5level %logger{35} -%kvp- %msg %n</pattern>
         </encoder>
     </appender>
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
@@ -12,6 +12,14 @@
         <append>true</append>
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>%d %p %t %c - %m%n</Pattern>
+        </layout>
+    </appender>
+    <appender name="FILE_ERROR" class="ch.qos.logback.core.FileAppender">
+        <!-- "application-name" is a variable -->
+        <File>/home/brucaliffo/Documents/logs/corso_epicode_error.log</File>
+        <append>true</append>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyyy-MM-dd hh:mm:ss} %p %t %c - %m%n</Pattern>
         </layout>
     </appender>
     <appender name="ROLLINGTIMEFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -47,7 +55,16 @@
 
 
     <!--additivity serve per indicare se il logger deve usare solo il proprio appender o anche quello ereditato da root-->
-    <logger name="prova" level="WARN" additivity="false">
+    <logger name="esercizio1" level="error" additivity="false">
+        <appender-ref ref="FILE_ERROR" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="esercizio2" level="error" additivity="false">
+        <appender-ref ref="FILE_ERROR" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="Banca" level="error" additivity="false">
+        <appender-ref ref="FILE_ERROR" />
         <appender-ref ref="STDOUT" />
     </logger>
     <root level="info">
