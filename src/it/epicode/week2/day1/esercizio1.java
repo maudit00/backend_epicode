@@ -5,11 +5,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class esercizio1 {
+    final static Logger logger = LoggerFactory.getLogger("esercizio1");
     public static void main(String[] args) {
         int[] array = new int[5];
         Random randomNumber = new Random();
         Scanner scanner = new Scanner(System.in);
-        final Logger logger = LoggerFactory.getLogger("esercizio1");
 
         for (int i = 0; i < array.length; i++) {
             array[i] = randomNumber.nextInt(10) + 1;
@@ -25,7 +25,7 @@ public class esercizio1 {
         Scanner scanner = new Scanner(System.in);
         int number;
         int position;
-        int exitingNumber = 0;
+        final int exitingNumber = 0;
 
         do {
         System.out.println("Inserisci un numero");
@@ -41,7 +41,7 @@ public class esercizio1 {
             printNewArr(arr);
         }
         catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Hai inserito un indice non esistente");
+            logger.error("Indice non presente nell'array");
             insertInArray(arr);
         }
     } while (number != exitingNumber);

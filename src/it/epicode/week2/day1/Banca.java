@@ -11,12 +11,11 @@ public class Banca {
         final Logger logger = LoggerFactory.getLogger("Banca");
 
         try {
-            conto1.preleva(1750.5);
+            conto1.preleva(111750.5);
             System.out.println("Saldo conto: " + conto1.restituisciSaldo());
         } catch (BancaException e){
-            System.out.println("Errore durante il prelievo: " + e );
             e.printStackTrace();
-            logger.info("Errore nel prelievo, conto in rosso" + e);
+            logger.error("Errore nel prelievo, conto in rosso" + e);
         }
 
         ContoOnLine conto2 = new ContoOnLine("Rossi Luigi", 50350.0, 1500);
@@ -26,9 +25,8 @@ public class Banca {
        conto2.preleva(2000);
        conto2.stampaSaldo();
        } catch (BancaException e){
-            System.out.println("Errore durante il prelievo: " + e );
-            e.printStackTrace();
-           logger.info("Prelievo massimo raggiunto" + e);
+           e.printStackTrace();
+           logger.error("Prelievo massimo raggiunto" + e);
         }
     }
 }
