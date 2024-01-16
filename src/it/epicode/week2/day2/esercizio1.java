@@ -27,16 +27,10 @@ public class esercizio1 {
 
 
 		System.out.println("Parole duplicate");
-
-		for (String c:paroleDuplicate){
-			System.out.println(c);
-		}
-
+		System.out.println(paroleDuplicate);
 		System.out.println("Numero parole distinte: " + parole.size());
 		System.out.println("Elenco parole distinte: ");
-		for (String p:parole){
-			System.out.println(p);
-			}
+		System.out.println(parole);
 		}
 
 	}

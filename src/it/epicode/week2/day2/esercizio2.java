@@ -1,5 +1,4 @@
 package it.epicode.week2.day2;
-import ch.qos.logback.core.encoder.JsonEscapeUtil;
 
 import java.util.*;
 
@@ -8,19 +7,16 @@ public class esercizio2 {
         int n;
         Random randomNumber = new Random();
         ArrayList<Integer> lista = new ArrayList<>();
-
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Inserisci la lunghezza della lista");
-        n = randomNumber.nextInt();
+        n = scanner.nextInt();
 
         for (int i = 0; i < n ; i++){
             int randNum = randomNumber.nextInt(100) + 1 ;
             System.out.println(randNum);
             lista.add(randNum);
         }
-
-        printList(lista);
-
 
     }
 
