@@ -28,9 +28,8 @@ public class esercizio2 {
 
     public static ArrayList<Integer> revertList(ArrayList<Integer> lista){
         ArrayList<Integer> revertedList = new ArrayList<>();
-        for (int i = (lista.size() -1); i >= 0 ; i --){
-          revertedList.add(lista.get(i));
-        }
+        revertedList.addAll(lista);
+        revertedList.addAll(lista.reversed());
         return revertedList;
     }
 
@@ -42,19 +41,12 @@ public class esercizio2 {
     }
 
     public static void printOddEven (ArrayList<Integer> list, boolean even) {
-        if (even) {
-            System.out.println("Numeri posizioni pari");
-            for (int i = 0; i < list.size(); i++) {
-                if (i % 2 == 0) {
-                    System.out.println(list.get(i));
-                }
-            }
-        } else {
-            System.out.println("Numeri posizioni dispari");
-            for (int i = 0; i < list.size(); i++) {
-                if (i % 2 != 0) {
-                    System.out.println(list.get(i));
-                }
+        System.out.println(even ? "Lista pari per posizione" : "Lista dispari per posizione");
+        for (int i = 0; i < list.size(); i++){
+            if(even && i % 2 == 0){
+                System.out.println("Posizione: " + i + " " +list.get(i));
+            } else if (!even && i % 2 != 0){
+                System.out.println("Posizione: " + i + " " +list.get(i));
             }
         }
     }
