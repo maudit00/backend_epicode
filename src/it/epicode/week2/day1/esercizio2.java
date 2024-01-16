@@ -14,8 +14,10 @@ public class esercizio2 {
 
         System.out.println("Inserisci il numero di KM percorsi dall'auto");
         km = scanner.nextInt();
+        logger.info("Presi KM in input");
         System.out.println("Inserisci il numero di litri consumati nel percorso");
         litro = scanner.nextInt();
+        logger.info("Presi litri in input");
 
 
         try {

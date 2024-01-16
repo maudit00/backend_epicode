@@ -59,7 +59,7 @@
         <appender-ref ref="FILE_ERROR" />
         <appender-ref ref="STDOUT" />
     </logger>
-    <logger name="esercizio2" level="error" additivity="false">
+    <logger name="esercizio2" level="info" additivity="false">
         <appender-ref ref="FILE_ERROR" />
         <appender-ref ref="STDOUT" />
     </logger>
