@@ -6,7 +6,7 @@ public class esercizio1 {
 		int n;
 		String parola;
 		HashSet<String> parole = new HashSet<>();
-		ArrayList<String> paroleDuplicate = new ArrayList<>();
+		HashSet<String> paroleDuplicate = new HashSet<>();
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -14,10 +14,10 @@ public class esercizio1 {
 		n = scanner.nextInt();
 		scanner.nextLine();
 
-		for (int i = 0; i < n; i++){
+		for(int i = 0; i < n; i++){
 		System.out.println("Inserisci la parola da salvare");
 		parola = scanner.nextLine();
-		if (parole.contains(parola)){
+		if (!parole.add(parola)){
 			parole.remove(parola);
 			paroleDuplicate.add(parola);
 		} else {
