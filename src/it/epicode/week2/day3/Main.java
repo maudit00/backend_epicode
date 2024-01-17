@@ -53,12 +53,16 @@ public class Main {
         boysProducts.stream().forEach(el -> el.setPrice(el.discountPrice(10)));
         printList(boysProducts);
 
-        List<Order> tier2OrdersFebruary = orderList.stream().filter(order -> order.getOrderDate().isAfter(orderFilterMin) && order.getOrderDate().isBefore(orderFilterMax) && order.getCustomer().getTier() == 2).toList();
         List<Product> tier2 = orderList.stream()
                 .filter(order -> order.getOrderDate().isAfter(orderFilterMin) && order.getOrderDate().isBefore(orderFilterMax) && order.getCustomer().getTier() == 2)
-                        .flatMap(order -> order.getProducts().stream()).toList();
+                .flatMap(order -> order.getProducts().stream())
+                .distinct()
+                .toList();
+
+
         printList(tier2);
     }
+
     public static void printList(List<Product> list){
         System.out.println("Stampa lista: ");
         for(Product p:list){
