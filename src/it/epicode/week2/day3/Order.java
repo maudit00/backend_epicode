@@ -35,4 +35,8 @@ public class Order {
                 ", customer=" + customer +
                 '}';
     }
+
+    public Customer getCustomer() {
+        return customer;
+    }
 }

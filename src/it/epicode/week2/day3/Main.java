@@ -16,7 +16,7 @@ public class Main {
 
         Customer c1 = new Customer(1, "Mario Rossi", 2);
         Customer c2 = new Customer(2, "Bruno Giordano", 1);
-        Customer c3 = new Customer(3, "Antonio Verdi", 2);
+        Customer c3 = new Customer(3, "Antonio Verdi", 1);
         Customer c4 = new Customer(4, "Maria Cicala", 3);
 
         Order o1 = new Order(1, "delivered", LocalDate.parse("2021-02-02"), LocalDate.parse("2021-02-05"), List.of(p1,p3,p7), c1);
@@ -46,7 +46,7 @@ public class Main {
         boysProducts.stream().forEach(el -> el.setPrice(el.discountPrice(10)));
         printList(boysProducts);
 
-        List<Order> tier2OrdersFebruary = orderList.stream().filter(order -> order.getOrderDate().isAfter(orderFilterMin) && order.getOrderDate().isBefore(orderFilterMax)).toList();
+        List<Order> tier2OrdersFebruary = orderList.stream().filter(order -> order.getOrderDate().isAfter(orderFilterMin) && order.getOrderDate().isBefore(orderFilterMax) && order.getCustomer().getTier() == 2).toList();
         System.out.println(tier2OrdersFebruary);
         printOrders(tier2OrdersFebruary);
     }
