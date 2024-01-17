@@ -39,4 +39,8 @@ public class Order {
     public Customer getCustomer() {
         return customer;
     }
+
+    public List<Product> getProducts() {
+        return products;
+    }
 }

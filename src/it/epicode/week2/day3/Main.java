@@ -16,19 +16,20 @@ public class Main {
 
         Customer c1 = new Customer(1, "Mario Rossi", 2);
         Customer c2 = new Customer(2, "Bruno Giordano", 1);
-        Customer c3 = new Customer(3, "Antonio Verdi", 1);
-        Customer c4 = new Customer(4, "Maria Cicala", 3);
+        Customer c3 = new Customer(3, "Antonio Verdi", 2);
+        Customer c4 = new Customer(4, "Maria Cicala", 2);
 
         Order o1 = new Order(1, "delivered", LocalDate.parse("2021-02-02"), LocalDate.parse("2021-02-05"), List.of(p1,p3,p7), c1);
         Order o2 = new Order(2, "delivered", LocalDate.parse("2021-02-03"), LocalDate.parse("2021-02-05"), List.of(p1,p5,p4), c3);
         Order o3 = new Order(3, "delivered", LocalDate.parse("2023-05-07"), LocalDate.parse("2023-05-17"), List.of(p2,p3,p6), c2);
         Order o4 = new Order(4, "delivered", LocalDate.parse("2023-06-07"), LocalDate.parse("2023-06-17"), List.of(p2,p3,p6), c2);
+        Order o5 = new Order(5, "delivered", LocalDate.parse("2021-02-03"), LocalDate.parse("2021-02-05"), List.of(p1,p5,p4), c4);
 
         LocalDate orderFilterMin = LocalDate.of(2021, Month.FEBRUARY, 01);
         LocalDate orderFilterMax = LocalDate.of(2021, Month.APRIL, 01);
 
         List<Product> productList = List.of(p1,p2,p3,p4,p5,p6,p7);
-        List<Order> orderList = List.of(o1,o2,o3,o4);
+        List<Order> orderList = List.of(o1,o2,o3,o4,o5);
 
         Stream<Product> productStream = productList.stream();
 
@@ -36,9 +37,15 @@ public class Main {
 
         printList(bookOverHundred);
 
-        List<Product> babyProducts = productList.stream().filter(element -> element.getCategory() == "Baby").toList();
+        List<Order> babyProductsOrders = orderList.stream().filter(el -> {
+            List products =  el.getProducts().stream().filter(product -> product.getCategory() == "Baby").toList();
+            if (products.isEmpty()){
+                return false;
+            }
+            return true;
+        }).toList();
 
-        printList(babyProducts);
+        printOrders(babyProductsOrders);
 
         List<Product> boysProducts= productList.stream().filter(element -> element.getCategory() == "Boys").toList();
 
@@ -47,7 +54,6 @@ public class Main {
         printList(boysProducts);
 
         List<Order> tier2OrdersFebruary = orderList.stream().filter(order -> order.getOrderDate().isAfter(orderFilterMin) && order.getOrderDate().isBefore(orderFilterMax) && order.getCustomer().getTier() == 2).toList();
-        System.out.println(tier2OrdersFebruary);
         printOrders(tier2OrdersFebruary);
     }
     public static void printList(List<Product> list){
