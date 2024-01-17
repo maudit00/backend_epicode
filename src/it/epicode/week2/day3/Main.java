@@ -54,6 +54,9 @@ public class Main {
         printList(boysProducts);
 
         List<Order> tier2OrdersFebruary = orderList.stream().filter(order -> order.getOrderDate().isAfter(orderFilterMin) && order.getOrderDate().isBefore(orderFilterMax) && order.getCustomer().getTier() == 2).toList();
+        List<Product> tier2 = orderList.stream()
+                .filter(order -> order.getOrderDate().isAfter(orderFilterMin) && order.getOrderDate().isBefore(orderFilterMax) && order.getCustomer().getTier() == 2)
+                        .flatMap(order -> order.getProducts().stream().)
         printOrders(tier2OrdersFebruary);
     }
     public static void printList(List<Product> list){
