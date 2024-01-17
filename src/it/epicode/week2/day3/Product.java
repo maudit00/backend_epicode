@@ -42,4 +42,8 @@ public class Product {
     public double getPrice() {
         return price;
     }
+
+    public double discountPrice(int discount) {
+        return price - (price * discount / 100);
+    }
 }

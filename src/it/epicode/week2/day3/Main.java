@@ -43,7 +43,7 @@ public class Main {
         List<Product> boysProducts= productList.stream().filter(element -> element.getCategory() == "Boys").toList();
 
         printList(boysProducts);
-        boysProducts.stream().forEach(el -> el.setPrice(el.getPrice()*0.9));
+        boysProducts.stream().forEach(el -> el.setPrice(el.discountPrice(10)));
         printList(boysProducts);
 
         List<Order> tier2OrdersFebruary = orderList.stream().filter(order -> order.getOrderDate().isAfter(orderFilterMin) && order.getOrderDate().isBefore(orderFilterMax)).toList();
