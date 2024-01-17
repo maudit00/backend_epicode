@@ -10,14 +10,14 @@ public class Main {
         Product p2= new Product(2, "Il Signore degli anelli ", "Books", 200);
         Product p3 = new Product(3, "Tre Metri sopra il cielo", "Books", 10);
         Product p4 = new Product(4, "Paperella di gomma", "Baby", 10);
-        Product p5 = new Product(6, "Coltellino Svizzero", "Boys", 30);
-        Product p6 = new Product(7, "Bavaglino", "Baby", 8);
-        Product p7 = new Product(8, " Maglia Squadra del cuore", "Boys", 80);
+        Product p5 = new Product(5, "Coltellino Svizzero", "Boys", 30);
+        Product p6 = new Product(6, "Bavaglino", "Baby", 8);
+        Product p7 = new Product(7, " Maglia Squadra del cuore", "Boys", 80);
 
         Customer c1 = new Customer(1, "Mario Rossi", 2);
         Customer c2 = new Customer(2, "Bruno Giordano", 1);
         Customer c3 = new Customer(3, "Antonio Verdi", 2);
-        Customer c4 = new Customer(4, "Maria Cicala", 2);
+        Customer c4 = new Customer(4, "Maria Cicala", 3);
 
         Order o1 = new Order(1, "delivered", LocalDate.parse("2021-02-02"), LocalDate.parse("2021-02-05"), List.of(p1,p3,p7), c1);
         Order o2 = new Order(2, "delivered", LocalDate.parse("2021-02-03"), LocalDate.parse("2021-02-05"), List.of(p1,p5,p4), c3);
@@ -56,8 +56,8 @@ public class Main {
         List<Order> tier2OrdersFebruary = orderList.stream().filter(order -> order.getOrderDate().isAfter(orderFilterMin) && order.getOrderDate().isBefore(orderFilterMax) && order.getCustomer().getTier() == 2).toList();
         List<Product> tier2 = orderList.stream()
                 .filter(order -> order.getOrderDate().isAfter(orderFilterMin) && order.getOrderDate().isBefore(orderFilterMax) && order.getCustomer().getTier() == 2)
-                        .flatMap(order -> order.getProducts().stream().)
-        printOrders(tier2OrdersFebruary);
+                        .flatMap(order -> order.getProducts().stream()).toList();
+        printList(tier2);
     }
     public static void printList(List<Product> list){
         System.out.println("Stampa lista: ");
