@@ -46,11 +46,12 @@ public class Main {
         }).toList();
 
         printOrders(babyProductsOrders);
+        List<Product> boysProducts= productList.stream().filter(element -> element.getCategory() == "Boys").map(product -> {
+            product.setPrice(product.discountPrice(10));
+            return product;
+        }).toList();
 
-        List<Product> boysProducts= productList.stream().filter(element -> element.getCategory() == "Boys").toList();
 
-        printList(boysProducts);
-        boysProducts.stream().forEach(el -> el.setPrice(el.discountPrice(10)));
         printList(boysProducts);
 
         List<Product> tier2 = orderList.stream()
